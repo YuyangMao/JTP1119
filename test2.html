@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body, img, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, form, div, input, textarea, span {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑", "Arial";
+    }
+
+    input{
+        outline: none;
+    }
+    ul, li {
+        list-style-type: none;
+    }
+
+    img {
+        border: medium none;
+    }
+    .alert{
+        position: fixed;
+        width: 200px;
+        background: #333;
+        top: 15%;
+        left: 30%;
+    }
+</style>
+<body>
+<button class="shanchu">删除</button>
+
+</body>
+<script src="js/jquery-2.1.4.min_ui.js"></script>
+<script>
+    const method = {
+        alert:(name ,title , callback ,type) => {
+            let html = '';
+            html += '<div class="alert">';
+            if(name === 'success'){
+                html += '<h3 style="color: #fff">这是成功弹窗</h3>';
+            }
+            if(name === 'error'){
+                html += '<h3 style="color: #fff">这是失败弹窗</h3>';
+            }
+            if(name === 'warning'){
+                html += '<h3 style="color: #fff">这是警告弹窗</h3>';
+            }
+            html += '<h1 style="color: #fff">'+title+'</h1>';
+            if(type){
+                html += '<div><button id="cancelAlert">取消</button><button id="confirmAlert">确定</button></div>';
+            } else{
+                html += '<div><button id="confirmAlert">确定</button></div>';
+            }
+            html += '</div>';
+            $('body').append(html);
+            $("#cancelAlert").click(function () {
+                $(".alert").remove()
+            })
+            $("#confirmAlert").click(function (e) {
+                callback(e)
+                $(".alert").remove()
+            })
+        },
+        myajax:( type , url , data, successFun , errorFun )=>{
+            $.ajax({
+                type:type,
+                url:url,
+                data:data,
+                async:true,
+                timeout:20000,
+                cache:false,
+                contentType:'application/json',
+                success:function(result){
+                    successFun(result)
+                },
+                error:function (error) {
+                    errorFun(error)
+                }
+            });
+        }
+    }
+
+
+
+
+
+    $(".shanchu").click(function () {
+        const userDate = {
+            username: 'admin',
+            password: '123456'
+        };
+        method.myajax('post','http://10.52.19.163:8999/v1/auth/login',JSON.stringify(userDate),
+            function (result) {
+            if ( result.token) {
+                method.alert('success','登录成功',function () {
+
+                },false)
+            } else{
+                method.alert('error',result.message,function () {
+
+                },false)
+                }
+        },function (error) {
+            console.log(error)
+            method.alert('error',error.status,function () {
+
+            },false)
+        })
+    })
+</script>
+</html>

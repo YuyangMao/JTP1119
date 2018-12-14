@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		body, img, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, form, div, input, textarea, span {
+	        margin: 0;
+	        padding: 0;
+	        font-family: "微软雅黑", "Arial";
+	    }
+	
+	    input{
+	        outline: none;
+	    }
+	    ul, li {
+	        list-style-type: none;
+	    }
+	
+	    img {
+	        border: medium none;
+	    }
+	    #content{
+	        width: 100%;
+	        max-width: 1920px;
+	        min-width: 1366px;
+	        height: 100%;
+	        position: fixed;
+	        top: 0;
+	        bottom: 0;
+	    }
+	    #content > header{
+	        padding: 20px;
+	        background: #007fff;
+	        color: #fff;
+	    }
+	    #content > section{
+	        height: calc( 100% - 122px );
+	    }
+	    #content > section > nav{
+	        width: 200px;
+	        height: 100%;
+	        padding: 10px;
+	        vertical-align: top;
+	        overflow-x: hidden;
+	        transition: width 0.2s;
+	        border-right: 1px solid #e2e2e2;
+	    }
+	    #content > section > nav li{
+	        margin: 10px 0;
+	    }
+	    #content > section > nav dl{
+	        display: none;
+	    }
+	    #content > section > div{
+	        width: calc( 100% - 230px );
+	        height: 100%;
+	        vertical-align: top;
+	    }
+	    #content > footer{
+	        display: block;
+	        padding: 20px;
+	        text-align: center;
+	        background: #666;
+	        color: #fff;
+	    }
+	    .inlineblock{
+	        display: inline-block;
+	    }
+	    .p_20{
+	        padding: 20px;
+	    }
+	    .p_l_20{
+	        padding-left: 20px;
+	    }
+		#printdiv{
+			background: #87CEEB;
+			width: 1024px;
+			height: 50px;
+			text-align: center;
+		}
+		#infodiv{
+			background: #F0F8FF;
+			width: 1020px;
+			height: 50px;
+		}
+		#shortinfo{
+			background-color: #F0F8FF; 
+			width: 248px;
+			height: 50px;
+		}
+		#shortprint{
+			background-color: #87CEEB; 
+			width: 250px;
+			height: 50px;
+			text-align: center;
+			display: inline-block;
+		}
+		#longinfo{
+			background-color: #F0F8FF; 
+			width: 761px;
+			height: 50px;
+		}
+	</style>
+	<body>
+		<div id="content">
+			<header style="height: 80px;">
+				capgemini凯捷
+				<img src="img/sign.png" style="text-align: right; height: 80px;"/>
+			</header>
+			<section>
+				<nav type="0" class="inlineblock allNav">
+					<ul>
+						<li>
+							<a type="0" style="background-color: darkgray;">关于简历</a>
+							<dl class="p_l_20" style="background-color: lightgray;">
+								<dd>撰写简历</dd>
+								<dd>功能</dd>
+								<dd>功能</dd>
+								<dd>功能</dd>
+							</dl>
+						</li>
+						<li>
+							<a type="0" style="background-color: darkgray;">功能</a>
+							<dl class="p_l_20" style="background-color: lightgray;">
+								<dd>功能</dd>
+								<dd>功能</dd>
+								<dd>功能</dd>
+								<dd>功能</dd>
+							</dl>
+						</li>
+					</ul>
+				</nav>
+				<div class="inlineblock" style="overflow: scroll;">
+					<div>
+						<div style="height: 50px;text-align: center;">个人简历</div>
+						
+						<span style="display: inline;">姓名</span>
+						<input style="display: inline;"></input>
+						<span style="display: inline;">性别</span>
+						<input style="display: inline;"></input>
+						<span style="display: inline;">职位</span>
+						<input style="display: inline;"></input>
+						<span style="display: inline;">居住地</span>
+						<input style="display: inline;"></input>
+						<span style="display: inline;">国籍</span>
+						<input style="display: inline;"></input>
+						
+						<div id="printdiv">概述</div>
+						<input id="infodiv"></input>
+						
+						<div id="printdiv">从业经历</div>
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						
+						<div id="printdiv">行业经验</div>
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						
+						<div id="printdiv">技术经验</div>
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						<input id="shortinfo"></input>
+						<input id="longinfo"></input><br />
+						
+						<div id="printdiv">语言</div>
+						<dd id="shortprint">语言</dd>
+						<dd id="shortprint">听/说</dd>
+						<dd id="shortprint">阅读</dd>
+						<dd id="shortprint">写作</dd><br />
+						<input id="shortinfo"></input>
+						<input id="shortinfo"></input>
+						<input id="shortinfo"></input>
+						<input id="shortinfo"></input>
+						
+						<div id="printdiv">项目经验</div>
+						<dd id="shortprint">起始日期</dd><input id="shortinfo"></input><dd id="shortprint">结束日期</dd><input id="shortinfo"></input><br />
+						<dd id="shortprint">客户</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">项目</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">角色</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">职责</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">起始日期</dd><input id="shortinfo"></input><dd id="shortprint">结束日期</dd><input id="shortinfo"></input><br />
+						<dd id="shortprint">客户</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">项目</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">角色</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">职责</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">起始日期</dd><input id="shortinfo"></input><dd id="shortprint">结束日期</dd><input id="shortinfo"></input><br />
+						<dd id="shortprint">客户</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">项目</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">角色</dd><input id="longinfo"></input><br />
+						<dd id="shortprint">职责</dd><input id="longinfo"></input><br />
+						
+						<div id="printdiv">培训/证书</div>
+						<input id="infodiv"></input>
+						<input id="infodiv"></input>
+						<div id="printdiv">教育背景</div>
+						<input id="infodiv"></input>
+						<input id="infodiv"></input>
+						
+						<div id="printdiv">其他</div>
+						<input id="infodiv"></input>
+						<input id="infodiv"></input><br />
+						
+						<button style="display: inline;text-align: center; width: 80px; height: 30px; float: right;">取消</button>
+						<button style="display: inline;text-align: center; width: 80px; height: 30px; float: right;" >保存</button><br />
+						<img src="img/logo1.png" style="height: 80px; width: 250px; float: right;" />
+					</div>
+				</div>
+			</section>
+			<footer>capgemini</footer>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.4.min_ui.js"></script>
+	<script>
+		$(".allNav").dblclick(function() {
+					const type = $(this).attr('type');
+					if (type == 0) {
+						$(this).css('width', "10px")
+						$(this).attr('type', '1');
+					} else {
+						$(this).css('width', "200px")
+						$(this).attr('type', '0');
+					}
+		
+				})
+				$(".allNav li a").click(function() {
+					const type = $(this).attr('type');
+					if (type == 0) {
+						$(this).siblings('dl').slideDown(200);
+						$(this).attr('type', '1');
+					} else {
+						$(this).siblings('dl').slideUp(200);
+						$(this).attr('type', '0');
+					}
+					// $(this).children('dl').show()
+				})
+		$.ajax({
+			type: 'get',
+			url: "demo_test.txt",
+			data: {},
+			async: false,
+			timeout: 20000,
+			cache: false,
+			beforeSend: {
+
+			},
+			contentType: 'application/json',
+			success: function(result) {
+				
+			},
+			error: function(error) {
+
+			}
+		});
+	</script>
+</html>
